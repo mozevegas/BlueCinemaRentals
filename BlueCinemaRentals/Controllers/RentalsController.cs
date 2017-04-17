@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BlueCinemaRentals.Models;
+using BlueCinemaRentals.Services;
 
 namespace BlueCinemaRentals.Controllers
 {
@@ -11,7 +13,8 @@ namespace BlueCinemaRentals.Controllers
         // GET: Rentals
         public ActionResult Index()
         {
-            return View();
+            var Rentals = new RentalServices().GetAllRentals();
+            return View(Rentals);
         }
     }
 }

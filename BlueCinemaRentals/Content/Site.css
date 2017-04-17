@@ -57,3 +57,16 @@ table {
 h1, h2, h3 {
     font-family: Impact;
 }
+
+.jumbotron {
+    background-color: #3276b1;
+}
+
+body {
+    background-color: #BCC6D6;
+}
+
+footer {
+    font-size: 10px;
+    color: transparent;
+}

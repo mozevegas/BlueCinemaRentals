@@ -16,5 +16,23 @@ namespace BlueCinemaRentals.Controllers
             var Client = new ClientServices().GetAllClients();
             return View(Client);
         }
+
+        // GET: Clients/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Clients/Create
+        [HttpPost]
+        public ActionResult Create(FormCollection collection)
+        {
+            // Create new client
+            var client = new Client();
+            UpdateModel(client);
+            var newClient = new ClientServices().CreateClient(client);
+            return RedirectToAction("Index");
+        }
+
     }
 }
