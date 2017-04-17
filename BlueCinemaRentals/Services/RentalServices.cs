@@ -39,7 +39,7 @@ namespace BlueCinemaRentals.Services
                            ,[MovieId]
                            ,[DateOut]
                            ,[DateDue])                       
-                            VALUES ( @Title, @ReleaseYr, @Director, @GenreId)";
+                            VALUES ( @ClientId, @MovieId, @DateOut, @DateDue)";
                 var cmd = new SqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@ClientId", Rental.ClientId);
                 cmd.Parameters.AddWithValue("@MovieId", Rental.MovieId);

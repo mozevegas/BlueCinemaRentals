@@ -11,8 +11,8 @@ namespace BlueCinemaRentals.Models
         public int Id { get; set; }
         public string ClientId { get; set; }
         public int MovieId { get; set; }
-        public string DateOut { get; set; }
-        public int DateDue { get; set; }
+        public DateTime DateOut { get; set; }
+        public DateTime DateDue { get; set; }
 
         public Rental() { }
         public Rental(SqlDataReader reader)
@@ -20,8 +20,8 @@ namespace BlueCinemaRentals.Models
             this.Id = (int)reader["id"];
             this.ClientId = reader["ClientId"].ToString();
             this.MovieId = (int)reader["MovieId"];
-            this.DateOut = reader["DateOut"].ToString();
-            this.DateDue = (int)reader["DateDue"];
+            this.DateOut = (DateTime)reader["DateOut"];
+            this.DateDue = (DateTime)reader["DateDue"];
         }
 
     }
